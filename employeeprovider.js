@@ -7,6 +7,7 @@ var ObjectID = require('mongodb').ObjectID;
 EmployeeProvider = function(host, port) {
   this.db= new Db('node-mongo-employee', new Server(host, port, {safe: false}, {auto_reconnect: true}, {}));
   this.db.open(function(){});
+debugger;
 };
 
 
@@ -14,6 +15,7 @@ EmployeeProvider.prototype.getCollection= function(callback) {
   this.db.collection('employees', function(error, employee_collection) {
     if( error ) callback(error);
     else callback(null, employee_collection);
+debugger;
   });
 };
 
